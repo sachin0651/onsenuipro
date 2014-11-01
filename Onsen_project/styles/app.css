@@ -1,0 +1,36 @@
+.left {
+	text-align: left;
+}
+.right{
+  text-align: right;
+}
+/* custom styles for designing */
+.col, .row{
+  padding:4px;
+}
+.slide-left{
+  margin:4px;
+  padding:0 10px;
+}
+#ons-modal{
+  border:1px solid gray;
+  border-radius:20px;
+  background:#fff;
+  width:50%;
+  margin:auto;
+}
+h4{
+  margin:10px;
+  color:lightblue;
+}
+h3{
+   color:#47476B;
+}
+#email,#password{
+  border:1px solid gray;
+  border-radius:5px;
+  padding:6px 12px;
+  margin-bottom:4px;
+}
+
+
