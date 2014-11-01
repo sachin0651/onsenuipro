@@ -1,0 +1,44 @@
+
+  <ons-page> 
+  <ons-toolbar>
+  <div class="left">
+    <ons-back-button>Back</ons-back-button>
+  </div>
+  <div class="center">Mobile Brands</div>
+  </ons-toolbar>
+   <ons-toolbar>
+  <div class="center">Toolbars</div>
+  <div class="right">
+    <ons-toolbar-button> 
+    <ons-icon icon="ion-navicon" style="font-size: 32px; width: 1em">
+    </ons-toolbar-button>
+  </div>
+  </ons-toolbar>
+   <ons-list>
+    <ons-list-header>Toolbar Variations</ons-list-header>
+     <ons-list-item modifier="chevron"
+    onclick="myNavigator.pushPage('page2.html', { animation : 'slide' } )"> HTML Content
+     </ons-list-item>
+     <ons-list-item
+    modifier="chevron" onclick="myNavigator.pushPage('page4.html', { animation : 'slide' } )"> Search
+  Box </ons-list-item>
+   <ons-list-item modifier="chevron" onclick="myNavigator.pushPage('page5.html', { animation : 'slide' } )">
+  Images </ons-list-item> 
+  </ons-list>
+  <div data-role="content">
+    <ul data-role="listview" style="list-style-type: none">
+      <li data-role="list-divider">Brands Divider</li>
+      <li><a href="#" onclick="showDetail()"><img src="img/sample-mobile.png" width="100px" height="100px"></a>  </li>
+      <li><a href="#" onclick="showDetail()"><img src="img/SkinletDemoWPFView.jpg" width="100px" height="100px"></a></li>
+      <li><a href="#" onclick="showDetail()"><img src="img/note-3-colours-red.jpg" width="100px" height="100px"></a></li>
+    </ul>
+    <p id="credit">
+      Photos by <a href="#" onclick="goToFlickrPage();">Sachin Muneshwar</a>
+    </p>
+  </div>
+  <div style="text-align: center">
+    <br />
+    <ons-button modifier="light" onclick="myNavigator.popPage()"> Pop Page </ons-button>
+  </div>
+
+  

@@ -1,0 +1,196 @@
+<!doctype html>
+<html>
+<meta charset="utf-8">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="author" content="Sachin Muneshwar">
+<link rel="stylesheet" href="lib/onsen/css/onsenui.css">
+<link rel="stylesheet" href="lib/onsen/css/onsen-css-components.css">
+<link rel="stylesheet" href="styles/app.css">
+<script src="lib/onsen/js/jquery-2.1.1.min.js"></script>
+<script src="lib/onsen/js/angular/angular.js"></script>
+<script src="lib/onsen/js/onsenui.js"></script>
+<script>
+  ons.bootstrap();
+  ons.disableAutoStatusBarFill();
+  ons.ready(function() {
+    $('#show-modal').click(function(){
+      modal.show();
+    });
+    $('#modal-login, #modal-cancel').click(function(){
+      modal.hide();
+    });
+    
+
+    
+  });
+  function showDetail() {
+    myNavigator.pushPage('page4.html', { animation : 'fade' } );
+  }
+
+  function goToFlickrPage() {
+    var url = "http://www.google.com/";
+    window.open(url, '_blank');
+  }
+</script>
+  <body>
+  <div id="page">
+  
+  <ons-split-view var="app.splitView"
+  secondary-page="secondary.html"
+  main-page="main.html"
+  main-page-width="70%"
+  collapse="width= 500px">
+  </ons-split-view>>
+
+  <ons-template id="secondary.html">
+    <ons-page style="background-color: white; border-right: 1px solid #ddd;">
+      <ons-list>
+        <ons-list-item
+          modifier="tappable"
+          class="list__item__line-height"
+          onclick="app.splitView.toggle(); app.splitView.setMainPage('main.html');">
+          <i class="fa fa-home fa-lg" style="color: #FF3399"></i>
+          &nbsp; Home
+        </ons-list-item>
+
+        <ons-list-item
+          modifier="tappable"
+          class="list__item__line-height"
+          onclick="app.splitView.toggle();app.splitView.setMainPage('page1.html');">   
+          <i class="fa fa-gear fa-lg" style="color: #3399FF"></i>
+          &nbsp; Setting
+        </ons-list-item>
+
+      </ons-list>
+    </ons-page>
+  </ons-template>
+  
+    <!-- 
+  <ons-navigator title="Navigator" var="myNavigator"> -->
+   <ons-template id="main.html" var="myNavigator">
+     <ons-page>
+     <ons-toolbar>
+       <div class="left">
+        <ons-toolbar-button>
+         <ons-icon icon="ion-navicon" style="font-size: 32px; width: 1em">
+        </ons-toolbar-button>
+       </div>
+        <div class="center"> OnSen UI Application </div>
+          <div class="right">
+            <ons-button modifier="cta" id="show-modal">login</ons-button>
+          </div>
+     </ons-toolbar>
+     <ons-row>
+     <ons-col width="80%"></ons-col>
+     <ons-col width="20%" class="right">
+     <ons-icon icon="fa-twitter" size="20px" fixed-width="false" style="color: red; cursor:pointer"></ons-icon>
+     <ons-icon icon="fa-apple" size="20px" fixed-width="false" style="color: green; cursor:pointer"></ons-icon>
+     <ons-icon icon="ion-xbox" size="20px" fixed-width="false" style="color: purple; cursor:pointer"></ons-icon>
+     <ons-icon icon="fa-facebook" size="20px" fixed-width="false" style="color: blue; cursor:pointer"></ons-icon>
+     
+     </ons-col>
+     </ons-row>
+     
+     <ons-row>
+      <ons-col>  
+      <ons-button onclick="myNavigator.pushPage('page1.html', { animation : 'slide' } )">
+       Click to visit next page
+      </ons-button>
+      </ons-col>
+     </ons-row>
+     <ons-row> Different features of onsen UI</ons-row>
+     <ons-row>
+     <ons-col>
+     <h3>Super Performance</h3>
+     <p>Onsen UI is designed and implemented to deliver unprecedented user experience for your apps.
+        Frustrated with the lack of native-like performance? Try Onsen UI and you’ll feel the difference right away.</p>
+     </ons-col>
+     
+     <ons-col>
+     <h3>Multi-screen Support</h3>
+     <p>Onsen UI is responsive. View adjusts based on screen size, and its as easy as using the  tag to have a two-column view for tablets and one-column view for smartphones. </p>
+     </ons-col>
+     
+     <ons-col>
+     <h3>PhoneGap / Cordova Friendly</h3>
+     <p>Onsen UI is a perfect solution for developing hybrid apps. That's because our priority is performance and ease of use.</p>
+     </ons-col>
+     </ons-row>
+     <ons-modal var="modal" >   
+     <div id="ons-modal">
+     <h4>Login</h4>
+     <input type="text" placeholder="E-mail Address" id="email"><br>
+     <input type="password" placeholder="Password" id="password"><br>
+     <ons-button id="modal-login">Login</ons-button>
+     <ons-button id="modal-cancel">Cancel</ons-button>
+     </div>
+     </ons-modal>
+     </ons-page> 
+     </ons-template>
+   <!--  </ons-navigator> -->
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <!-- 
+  
+  <ons-tabbar>
+	<ons-tabbar-item page="main.html" label="Home" icon="ion-home" active="true"></ons-tabbar-item>
+    <ons-tabbar-item page="comments.html" label="Comments" icon="ion-chatbox-working"></ons-tabbar-item>
+    <ons-tabbar-item page="tags.html" label="Tags" icon="ion-ios7-pricetag"></ons-tabbar-item>
+    <ons-tabbar-item page="settings.html" label="Settings" icon="ion-ios7-cog"></ons-tabbar-item>
+</ons-tabbar>
+
+
+
+
+<ons-template id="home.html">
+  <ons-toolbar>
+    <div class="center">Home</div>
+  </ons-toolbar>
+  
+  <p style="padding-top: 100px; color: #999; text-align: center">Page Contents</p>
+</ons-template>
+
+<ons-template id="comments.html">
+  <ons-toolbar>
+    <div class="center">Comments</div>
+  </ons-toolbar>
+  
+  <p style="padding-top: 100px; color: #999; text-align: center">Page Contents</p>
+</ons-template>
+
+<ons-template id="tags.html">
+  <ons-toolbar>
+    <div class="center">Tags</div>
+  </ons-toolbar>
+  
+  <p style="padding-top: 100px; color: #999; text-align: center">Page Contents</p>
+</ons-template>
+
+<ons-template id="feed.html">
+  <ons-toolbar>
+    <div class="center">Feed</div>
+  </ons-toolbar>
+  
+  <p style="padding-top: 100px; color: #999; text-align: center">Page Contents</p>
+</ons-template>
+
+<ons-template id="settings.html">
+  <ons-toolbar>
+    <div class="center">Settings</div>
+  </ons-toolbar>
+  
+  <p style="padding-top: 100px; color: #999; text-align: center">Page Contents</p>
+</ons-template>
+ -->
+ 
+</div>
+</body>
+</html>
